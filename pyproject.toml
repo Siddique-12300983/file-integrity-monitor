@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "file-integrity-monitor"
+version = "1.0.0"
+description = "Build a SHA-256 baseline of a directory and detect added, modified and deleted files."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Md Abu Bakar Siddique" }]
+
+[project.scripts]
+fim = "fim.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["fim*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
